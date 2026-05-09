@@ -28,7 +28,7 @@ class Controller
             extract($viewData);
             $render = fn($vN, $vD = []) => $this->renderPartial($vN, $vD);
             $base = $this->getBaseUrl();
-            require '../src/views/' . $folder . '/' . $viewName . '.php';
+            require dirname(__DIR__) . '/src/views/' . $folder . '/' . $viewName . '.php';
         }
     }
 
