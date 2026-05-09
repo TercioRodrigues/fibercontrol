@@ -17,7 +17,7 @@ class Controller
     {
         $base = (isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) == 'on') ? 'https://' : 'http://';
         $base .= $_SERVER['HTTP_HOST'];
-        $base .= Config::BASE_DIR;
+        $base .= Config::env('BASE_DIR');
 
         return $base;
     }
