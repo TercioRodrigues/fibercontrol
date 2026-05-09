@@ -10,7 +10,7 @@ class Request
     public static function getUrl()
     {
         $url = filter_input(INPUT_GET, 'request');
-        $url = !empty($url) ? str_replace(Config::BASE_DIR, '', $url) : '';
+        $url = !empty($url) ? str_replace(Config::env('BASE_DIR'), '', $url) : '';
         $url = '/' . ltrim($url, '/'); // Remove barra inicial se houver, depois adiciona uma única barra
         return $url;
     }
