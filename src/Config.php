@@ -1,15 +1,15 @@
 <?php
+
 namespace src;
 
-class Config {
-    const BASE_DIR = '';
-
-    const DB_DRIVER = 'mysql';
-    const DB_HOST = 'localhost';
-    const DB_DATABASE = 'test';
-    CONST DB_USER = 'root';
-    const DB_PASS = '';
+class Config
+{
 
     const ERROR_CONTROLLER = 'ErrorController';
     const DEFAULT_ACTION = 'index';
+
+    public static function env($key, $default = null)
+    {
+        return $_ENV[$key] ?? $default;
+    }
 }
